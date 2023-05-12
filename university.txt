@@ -1,0 +1,66 @@
+
+department
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+address - VARCHAR(50) - NOT NULL;
+
+
+degree_course
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+department_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+name - VARCHAR(50) - NOT NULL;
+
+
+course
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+degree_course_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+
+
+teacher
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+lastname - VARCHAR(50) - NOT NULL;
+
+
+course_teacher
+________________
+
+course_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+teacher_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+
+
+appeal
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+data - data - NOT NULL;
+course_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+
+
+
+students
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+lastname - VARCHAR(50) - NOT NULL;
+birth_date - data - NOT NULL;
+degree_course_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+
+
+students_appeal
+________________
+
+students_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+appeal_id - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+vote - INT - UNSIGNED - NOT NULL;
+
